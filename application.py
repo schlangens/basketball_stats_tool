@@ -2,10 +2,15 @@
 import constants
 import sys
 
+cleaned_list = []
+
 # Create a clean_data function
 def clean_data():
     for item in constants.PLAYERS:
-        print(item)
+        item['height'] = int(item['height'].split()[0]) # Saved as int
+        # print("That player is", item['height'], "inches tall") #Prints the height with 
+        cleaned_list.append(item['height']) # adds cleaned int to list    
+
 # Create a balance_teams function
 
 
@@ -50,4 +55,5 @@ def start():
 
 #v Proper use of Dunder Main
 if __name__ == '__main__':
-    start()
+    #start() # Main app function 
+    clean_data()
