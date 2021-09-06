@@ -2,14 +2,14 @@
 import constants
 import sys
 
-cleaned_list = []
+cleaned_height = []
 
 # Create a clean_data function
 def clean_data():
     for item in constants.PLAYERS:
         item['height'] = int(item['height'].split()[0]) # Saved as int
         # print("That player is", item['height'], "inches tall") #Prints the height with 
-        cleaned_list.append(item['height']) # adds cleaned int to list    
+        cleaned_height.append(item['height']) # adds cleaned int to list    
 
 # Create a balance_teams function
 
