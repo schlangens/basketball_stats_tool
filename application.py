@@ -1,17 +1,27 @@
 # Import player data
 import constants
+import copy
 import sys
 
-cleaned_height = []
+
+cleaned_data = []
+height_data = []
+experienced = []
+
+
+
+def fetch_data():
+    for count, player in enumerate(constants.PLAYERS):
+        cleaned_data.append(player)
+        # print(cleaned_data)  
 
 # Create a clean_data function
 def clean_data():
-    for item in constants.PLAYERS:
-        item['height'] = int(item['height'].split()[0]) # Saved as int
-        # print("That player is", item['height'], "inches tall") #Prints the height with 
-        cleaned_height.append(item['height']) # adds cleaned int to list    
-
-# Create a balance_teams function
+    for index,item in enumerate(cleaned_data, 1):
+        print(f"{index}, {item}") # we are no printing the values from our CONSTANTS 
+       
+        
+                
 
 
 def start():
@@ -30,11 +40,7 @@ def start():
         second_question = input("Enter an option: (a/b/c) or q for quit \n")
         print ("--------------------------")
         if second_question == "a":# Panthers
-            print("Team: {team_name}")
-            print("--------------------------")
-            print("Total Players: {total_players}")
-            print("Players on Team: \n")
-            print("{player_names}")
+            panther()
         if second_question == "b": # Bandits
             print("Team: {team_name}")
             print("--------------------------")
@@ -55,5 +61,6 @@ def start():
 
 #v Proper use of Dunder Main
 if __name__ == '__main__':
-    #start() # Main app function 
+    # start() # Main app function 
+    fetch_data()
     clean_data()
